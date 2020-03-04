@@ -15,7 +15,7 @@ dict = {0:0, 1:0.3, 2:0.75, 3:1, 4:2}
 k = input("Please enter k for knn algorithm:\n")
 x = 4*(np.random.rand(100))
 for i in range(100):
-    c = [(b[0], np.mod(a[0] - x[i])),(b[1], np.mod(a[1] - x[i])),(b[2], np.mod(a[2] - x[i])),(b[3], np.mod(a[3] - x[i])),(b[4], np.mod(a[4] - x[i]))]
+    c = [(b[0], abs(a[0] - x[i])),(b[1], abs(a[1] - x[i])),(b[2], abs(a[2] - x[i])),(b[3], abs(a[3] - x[i])),(b[4], abs(a[4] - x[i]))]
     c.sort(key=takeSecond)
     d = c[:k]
     average = 0
