@@ -13,14 +13,17 @@ b = [0,1,2,3,4]
 dict = {0:0, 1:0.3, 2:0.75, 3:1, 4:2}
 
 k = input("Please enter k for knn algorithm:\n")
+k = int(k)
 x = 4*(np.random.rand(100))
+y = [None] * 100
 for i in range(100):
-    c = [(b[0], abs(a[0] - x[i])),(b[1], abs(a[1] - x[i])),(b[2], abs(a[2] - x[i])),(b[3], abs(a[3] - x[i])),(b[4], abs(a[4] - x[i]))]
+    c = [(b[0], abs(b[0] - x[i])),(b[1], abs(b[1] - x[i])),(b[2], abs(b[2] - x[i])),(b[3], abs(b[3] - x[i])),(b[4], abs(b[4] - x[i]))]
     c.sort(key=takeSecond)
-    d = c[:k]
+    #d = c[:k]
     average = 0
     for j in range(k):
-        average += dict[takeFirst(d[j])]
+        print(takeFirst(c[j]), dict[takeFirst(c[j])])
+        average += dict[takeFirst(c[j])]
     average /= k
     y[i] = average
 
