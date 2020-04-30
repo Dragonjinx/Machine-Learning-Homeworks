@@ -51,7 +51,7 @@ g = np.random.rand(100)
 g = g*8 - 4
 
 plt.plot(x,y0, color = 'y', label = "Initial function")
-plt.plot(x,y, 'o', color = 'g', label = "Datapoints")
+plt.plot(x,y, '.', color = 'g', label = "Datapoints")
 plt.plot(x, fu(x, c), color = 'r', label = "Predicted fit function")
 plt.plot(g, fu(g, c), '.', color = 'b', label = "Evaluation points")
 plt.legend()

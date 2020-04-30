@@ -122,7 +122,8 @@ inp, out = datasplit(table)
 inp = normalize(inp)
 
 ld = [100, 1, 0.1, 0.001, 0.00001]
-print("Please, be patient, calculations take time, 1/5 plot generating")
+print("Each plot generates long (~15 sec) because of many datapoints")
+print("Please, be patient, calculations take time, 0/5 plot generated")
 N = [8, 16, 32, 64, 128, 256, 512, 1024]
 y = []
 for j in range(len(N)):
@@ -137,10 +138,12 @@ for j in range(len(N)):
     #print(label)
     y.append(k_folds_cross(data, label, kernelRidge, 3, 100))
 plot = plt.figure('lambda = 100')
+plt.xscale('log')
+plt.yscale('log')
 plt.plot(N, y, color = 'r', label = "Error function")
 plt.legend()
 
-print("Please, be patient, calculations take time, 2/5 plot generating")
+print("Please, be patient, calculations take time, 1/5 plot generated")
 N = [8, 16, 32, 64, 128, 256, 512, 1024]
 y = []
 for j in range(len(N)):
@@ -155,10 +158,12 @@ for j in range(len(N)):
     #print(label)
     y.append(k_folds_cross(data, label, kernelRidge, 3, 1))
 plot = plt.figure('lambda = 1')
+plt.xscale('log')
+plt.yscale('log')
 plt.plot(N, y, color = 'r', label = "Error function")
 plt.legend()
 
-print("Please, be patient, calculations take time, 3/5 plot generating")
+print("Please, be patient, calculations take time, 2/5 plot generated")
 N = [8, 16, 32, 64, 128, 256, 512, 1024]
 y = []
 for j in range(len(N)):
@@ -173,11 +178,12 @@ for j in range(len(N)):
     #print(label)
     y.append(k_folds_cross(data, label, kernelRidge, 3, 0.1))
 plot = plt.figure('lambda = 0.1')
+plt.xscale('log')
+plt.yscale('log')
 plt.plot(N, y, color = 'r', label = "Error function")
 plt.legend()
 
-print("Each plot generates long (~15 sec) because of many datapoints")
-print("Please, be patient, calculations take time, 4/5 plot generating")
+print("Please, be patient, calculations take time, 3/5 plot generated")
 N = [8, 16, 32, 64, 128, 256, 512, 1024]
 y = []
 for j in range(len(N)):
@@ -192,10 +198,12 @@ for j in range(len(N)):
     #print(label)
     y.append(k_folds_cross(data, label, kernelRidge, 3, 0.001))
 plot = plt.figure('lambda = 0.001')
+plt.xscale('log')
+plt.yscale('log')
 plt.plot(N, y, color = 'r', label = "Error function")
 plt.legend()
 
-print("Please, be patient, calculations take time, 5/5 plot generating")
+print("Please, be patient, calculations take time, 4/5 plot generated")
 N = [8, 16, 32, 64, 128, 256, 512, 1024]
 y = []
 for j in range(len(N)):
@@ -210,9 +218,10 @@ for j in range(len(N)):
     #print(label)
     y.append(k_folds_cross(data, label, kernelRidge, 3, 0.00001))
 plot = plt.figure('lambda = 0.00001')
+plt.xscale('log')
+plt.yscale('log')
 plt.plot(N, y, color = 'r', label = "Error function")
 plt.legend()
-
-plt.show()
-
+print("Thanks for your patience, 5/5 plot generated :)")
 print("Also it can be seen that actually lambda = 0.1 is one of the best choices")
+plt.show()
